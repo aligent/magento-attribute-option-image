@@ -80,6 +80,7 @@
                         <th><?php echo Mage::helper('catalog')->__('Position') ?></th>
                         <th class="nobr a-center"><?php echo Mage::helper('catalog')->__('Is Default') ?></th>
                         <th class="nobr"><?php echo Mage::helper('catalog')->__('Image') ?></th>
+                        <th class="nobr"><?php echo Mage::helper('catalog')->__('Thumbnail') ?></th>
                         <th>
                             <?php if (!$this->getReadOnly()):?>
                                 <?php echo $this->getAddNewButtonHtml() ?>
@@ -117,6 +118,7 @@ var templateText =
             '<td><input class="input-text" type="text" name="option[order][{{id}}]" value="{{sort_order}}" <?php if ($this->getReadOnly()):?> disabled="disabled"<?php endif;?>/><\/td>'+
             '<td class="a-center"><input class="input-radio" type="{{intype}}" name="default[]" value="{{id}}" {{checked}} <?php if ($this->getReadOnly()):?> disabled="disabled"<?php endif;?>/><\/td>'+
             '<td class="nobr"><input id="option_image_{{id}}" type="text" name="option[image][{{id}}]" value="{{image}}" class="attribute_option_image" style="width:300px;" /><button id="add_image_{{id}}" class="scalable" type="button" onclick="MediabrowserUtility.openDialog(\'<?php echo Mage::getSingleton('adminhtml/url')->getUrl('*/cms_wysiwyg_images/index', array('static_urls_allowed' => 1)) ?>target_element_id/option_image_{{id}}/\');"><span>...</span></button></td>'+
+            '<td class="nobr"><input id="option_thumb_{{id}}" type="text" name="option[thumb][{{id}}]" value="{{thumb}}" class="attribute_option_image" style="width:200px;" /><button id="add_thumb_{{id}}" class="scalable" type="button" onclick="MediabrowserUtility.openDialog(\'<?php echo Mage::getSingleton('adminhtml/url')->getUrl('*/cms_wysiwyg_images/index', array('static_urls_allowed' => 1)) ?>target_element_id/option_thumb_{{id}}/\');"><span>...</span></button></td>'+
             '<td class="a-left">'+
                 '<input type="hidden" class="delete-flag" name="option[delete][{{id}}]" value="" />'+
                 <?php if (!$this->getReadOnly()):?>

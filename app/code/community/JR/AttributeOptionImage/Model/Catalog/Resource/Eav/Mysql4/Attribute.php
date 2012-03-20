@@ -36,6 +36,7 @@ class JR_AttributeOptionImage_Model_Catalog_Resource_Eav_Mysql4_Attribute extend
                            'attribute_id'  => $object->getId(),
                            'sort_order'    => isset($option['order'][$optionId]) ? $option['order'][$optionId] : 0,
                            'image'         => isset($option['image'][$optionId]) ? $option['image'][$optionId] : '',
+                           'thumb'         => isset($option['thumb'][$optionId]) ? $option['thumb'][$optionId] : '',
                         );
                         $write->insert($optionTable, $data);
                         $intOptionId = $write->lastInsertId();
@@ -44,6 +45,7 @@ class JR_AttributeOptionImage_Model_Catalog_Resource_Eav_Mysql4_Attribute extend
                         $data = array(
                            'sort_order'    => isset($option['order'][$optionId]) ? $option['order'][$optionId] : 0,
                            'image'         => isset($option['image'][$optionId]) ? $option['image'][$optionId] : '',
+                           'thumb'         => isset($option['thumb'][$optionId]) ? $option['thumb'][$optionId] : '',
                         );
                         $write->update($optionTable, $data, $write->quoteInto('option_id=?', $intOptionId));
                     }
