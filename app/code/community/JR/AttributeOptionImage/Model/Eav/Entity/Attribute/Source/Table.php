@@ -17,4 +17,20 @@ class JR_AttributeOptionImage_Model_Eav_Entity_Attribute_Source_Table extends Ma
         }
         return false;
     }
+    
+    public function getOptionThumb($value)
+    {
+        $options = Mage::getResourceModel('eav/entity_attribute_option_collection')
+            ->setPositionOrder('asc')
+            ->setAttributeFilter($this->getAttribute()->getId())
+            ->setStoreFilter($this->getAttribute()->getStoreId())
+            ->load()
+            ->toArray();
+        foreach ($options['items'] as $item) {
+            if ($item['option_id'] == $value) {
+                return $item['thumb'];
+            }
+        }
+        return false;
+    }
 }

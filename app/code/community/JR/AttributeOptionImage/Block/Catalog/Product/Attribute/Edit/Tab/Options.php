@@ -50,6 +50,7 @@ class JR_AttributeOptionImage_Block_Catalog_Product_Attribute_Edit_Tab_Options e
                 $value['id'] = $option->getId();
                 $value['sort_order'] = $option->getSortOrder();
                 $value['image'] = $option->getImage();
+                $value['thumb'] = $option->getThumb();
                 foreach ($this->getStores() as $store) {
                     $storeValues = $this->getStoreOptionValues($store->getId());
                     if (isset($storeValues[$option->getId()])) {
