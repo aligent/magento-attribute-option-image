@@ -6,7 +6,7 @@ class JR_AttributeOptionImage_Helper_Data extends Mage_Core_Helper_Abstract
     {
         $images = $this->getAttributeOptionImages();
         $image = array_key_exists($optionId, $images) ? $images[$optionId] : '';
-        if ($image && false === strpos($image, 'http://')) {
+        if ($image && (strpos($image, 'http') !== 0)) {
             $image = Mage::getDesign()->getSkinUrl($image);
         }
 
@@ -24,7 +24,7 @@ class JR_AttributeOptionImage_Helper_Data extends Mage_Core_Helper_Abstract
     {
         $images = $this->getAttributeOptionThumbs();
         $image = array_key_exists($optionId, $images) ? $images[$optionId] : '';
-        if ($image && false === strpos($image, 'http://')) {
+        if ($image && (strpos($image, 'http') !== 0)) {
             $image = Mage::getDesign()->getSkinUrl($image);
         }
 
