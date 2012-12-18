@@ -2,6 +2,10 @@
 
 class JR_AttributeOptionImage_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    
+    protected $images = null;
+    protected $thumbs = null;
+    
     public function getAttributeOptionImage($optionId)
     {
         $images = $this->getAttributeOptionImages();
@@ -15,9 +19,10 @@ class JR_AttributeOptionImage_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getAttributeOptionImages()
     {
-        $images = Mage::getResourceModel('eav/entity_attribute_option')->getAttributeOptionImages();
-
-        return $images;
+        if (is_null($this->images)) {
+            $this->images = Mage::getResourceModel('eav/entity_attribute_option')->getAttributeOptionImages();
+        }
+        return $this->images;
     }
     
     public function getAttributeOptionThumb($optionId)
@@ -33,8 +38,9 @@ class JR_AttributeOptionImage_Helper_Data extends Mage_Core_Helper_Abstract
     
     public function getAttributeOptionThumbs()
     {
-        $images = Mage::getResourceModel('eav/entity_attribute_option')->getAttributeOptionThumbs();
-
-        return $images;
+        if (is_null($this->thumbs)) {
+            $this->thumbs = Mage::getResourceModel('eav/entity_attribute_option')->getAttributeOptionThumbs();
+        }
+        return $this->thumbs;
     }
 }
