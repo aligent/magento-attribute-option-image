@@ -1,4 +1,4 @@
 # JReinke Magento Attribute Option Image deploy instructions
-app/code/community/JR app/code/community/JR
+app/code/community/JR/AttributeOptionImage app/code/community/JR/AttributeOptionImage
 app/design/adminhtml/default/default/template/jr app/design/adminhtml/default/default/template/jr
 app/etc/modules/JR_AttributeOptionImage.xml app/etc/modules/JR_AttributeOptionImage.xml
