@@ -1,0 +1,10 @@
+{
+    "name":"aligent/magento-attribute-opiton-image",
+    "type":"magento-module",
+    "license":"OSL-3.0",
+    "homepage":"https://github.com/aligent/magento-attribute-option-image.git",
+    "description":"Add images/icons to attribute options of your Magento products",
+    "require":{
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}
