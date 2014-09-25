@@ -152,7 +152,6 @@ var attributeOption = {
         }
         if (!data.intype)
             data.intype = optionDefaultInputType;
-        console.log(this.template.evaluate(data));
         Element.insert(this.table, {after: this.template.evaluate(data)});
         this.bindRemoveButtons();
         this.itemCount++;

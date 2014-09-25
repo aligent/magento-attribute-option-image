@@ -8,7 +8,7 @@ $installer->startSetup();
 
 $installer->run("
 ALTER TABLE `{$tableOption}`
-    ADD `hex` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+    ADD `hex` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ");
 
 $installer->endSetup();
