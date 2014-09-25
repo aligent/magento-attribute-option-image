@@ -17,4 +17,14 @@ class JR_AttributeOptionImage_Model_Observer
             ->addItem('js_css', 'prototype/windows/themes/default.css')
             ->addItem('js_css', 'prototype/windows/themes/magento.css');
     }
+
+    public function addAttributeOptionImageFlagProperty($oObserver) {
+        $oFieldset = $oObserver->getForm()->getElement('base_fieldset');
+        $oFieldset->addField('enable_option_image', 'select', array(
+            'name' => 'enable_option_image',
+            'label' => Mage::helper('catalog')->__('Has Option Image'),
+            'values' => Mage::getModel('adminhtml/system_config_source_yesno')->toOptionArray(),
+        ), '-');
+    }
+
 }

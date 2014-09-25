@@ -2,7 +2,7 @@
 <config>
     <modules>
         <JR_AttributeOptionImage>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
         </JR_AttributeOptionImage>
     </modules>
     <global>
@@ -72,6 +72,42 @@
                     </update_layout>
                 </observers>
             </controller_action_layout_render_before_adminhtml_catalog_product_attribute_edit>
+            <adminhtml_catalog_product_attribute_edit_prepare_form>
+                <observers>
+                    <add_attr_property_image_flag>
+                        <type>singleton</type>
+                        <class>jr_attributeoptionimage/observer</class>
+                        <method>addAttributeOptionImageFlagProperty</method>
+                    </add_attr_property_image_flag>
+                </observers>
+            </adminhtml_catalog_product_attribute_edit_prepare_form>
         </events>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <attribute_option_image>
+                                            <title>Attribute Option Image</title>
+                                        </attribute_option_image>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
     </adminhtml>
+    <default>
+        <attribute_option_image>
+            <settings>
+                <enable_thumbnail>1</enable_thumbnail>
+                <enable_hex>1</enable_hex>
+            </settings>
+        </attribute_option_image>
+    </default>
 </config>
