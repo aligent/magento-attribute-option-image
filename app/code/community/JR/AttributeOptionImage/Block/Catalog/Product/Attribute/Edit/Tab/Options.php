@@ -5,7 +5,9 @@ class JR_AttributeOptionImage_Block_Catalog_Product_Attribute_Edit_Tab_Options e
     public function __construct()
     {
         parent::__construct();
-        $this->setTemplate('jr/catalog/product/attribute/options.phtml');
+        if ($this->getAttributeObject()->getEnableOptionImage() == true) {
+            $this->setTemplate('jr/catalog/product/attribute/options.phtml');
+        }
     }
 
     public function getOptionValues()
